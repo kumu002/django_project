@@ -1,12 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
-        .mySlides {display:none;}
+    .mySlides {display:none;height: 500px;}
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+    .button {
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+    .button1 {
+      background-color: white;
+      color: black;
+      border: 2px solid #E9DCF5;
+    }
+
+    .button1:hover {
+      background-color: #E9DCF5;
+      color: black;
+    }
+
+    .button2 {
+      background-color: white;
+      color: black;
+      border: 2px solid #E9DCF5;
+    }
+
+    .button2:hover {
+      background-color: #E9DCF5;
+      color: black;
+    }
+    .container {
+      height: 200px;
+      position: relative;
+
+    }
+
+    .center {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    </style>
     <title>Garage Koi</title>
 
 </head>
@@ -22,10 +72,11 @@
       </ul>
         <ul class="navbar-nav">
             
-            <li> <a class="login nav-link" href="#" >Sign In</a> </li>
+            <li> <a class="login nav-link" href="login" >Sign In</a> </li>
             
             
-            <li><a class="login nav-link" href="#" >Sign Up</a></li>
+            <li><a class="login nav-link" href="signup" >Sign Up</a></li>
+
             
             
         </ul>
@@ -34,16 +85,60 @@
       
   </div>
 </nav>
-<div>
-    <div class="w3-content w3-display-container">
-        {% load static %}
-  <img class="mySlides" src="{% static 'image/car1.jpeg' %}" style="width:100%">
+<!-- Slideshow container -->
+
+<div class="w3-content w3-display-container" >
+    {% load static %}
+  <img class="mySlides" src="{% static 'image/car1.jpg' %}" style="width:100%">
   <img class="mySlides" src="{% static 'image/car2.jpeg' %}" style="width:100%">
+  <img class="mySlides" src="{% static 'image/car3.jpg' %}" style="width:100%">
 
   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
   <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 </div>
 
+<div class="container">
+  <div class="center">
+    <a class="button button1" href="login">Sign In</a>
+    <a class="button button2" href="signup">Sign Up</a>
+  </div>
+</div>
+
+<footer class="bg-body-tertiary text-center text-lg-start" style="background-color: #e3f2fd;">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0 center">
+        <h5 class="text-uppercase">Garage Koi</h5>
+
+        <ul class="list-unstyled mb-0">
+          <li>
+            <a href="about" class="text-body">About Us</a>
+          </li>
+          <li>
+            <a href="#" class="text-body">Contract Us: 00000000</a>
+          </li>
+
+        </ul>
+      </div>
+      <!--Grid column-->
+
+
+
+    </div>
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a class="text-body" href="/">Garage Koi</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 <script>
 var slideIndex = 1;
 showDivs(slideIndex);
@@ -58,14 +153,11 @@ function showDivs(n) {
   if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
+    x[i].style.display = "none";
   }
-  x[slideIndex-1].style.display = "block";  
+  x[slideIndex-1].style.display = "block";
 }
 </script>
-</div>
- 
 
-    <h1>Welcome!</h1>
 </body>
 </html>
