@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import SignupForm, LoginForm
-from .models import Users
+from .models import Users, Parking_places
 
 
 # Create your views here.
@@ -43,7 +43,10 @@ def login(request):
 
         if password == user.password:
             request.session["user_id"] = user.id
-            return HttpResponse("You're logged in.")
+            request.session["email"] = user.email
+            request.session["name"] = user.name
+            request.session["role_id"] = user.role_id
+            return redirect('home2')
             # return redirect('/')
         # user = authenticate(username=username, password=password)
 
@@ -53,13 +56,13 @@ def login(request):
 
     return render(request, 'login.html')
 
-def home2(request):
 
-def mainpage(request):
-    return render(request, 'mainpage.html')
+def home2(request):
+    all_posts = Parking_places.objects.raw("Select * from registration_parking_places, registration_location where role_id=2")
+    return render(request, "home2.html", {'all_posts': all_posts})
 
 
 # logout page
-def user_logout(request):
-    logout(request)
+def logout(request):
+    del request.session
     return redirect('login')

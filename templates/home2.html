@@ -2,52 +2,40 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Garage Koi</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
-}
-</style>
-
-
-
 
 <body>
+{% if request.session.user_id %}
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #5F9EA0;">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="font-size:xx-large"><i>Garage Koi</i></a>
 
-<div class="topnav">
-  <a class="active" href="#home">GarageKoi?</a>
-  <a href="#profile"> Profile  </a>
-  <a href="#contact">Contact us </a>
-  <a href="#about">About</a>
-</div>
+    <div class="collapse navbar-collapse" id="">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+      </ul>
+        <ul class="navbar-nav">
+
+            <li><a class="login nav-link" href="#" >Add Slot</a></li>
+            <li> <a class="login nav-link" >{{request.session.name}}</a> </li>
+            <li><a class="login nav-link" href="{% url 'login' %}" >log out</a></li>
+
+
+
+
+
+        </ul>
+
+    </div>
+
+  </div>
+</nav>
 
 <div style="padding-left:16px">
 
@@ -104,49 +92,20 @@ div {
 <p>Chose your desired garage :</p>
 
 
-
+{%  for post in all_posts %}
 <div class="fourth">
 
-       <p><b>Garage ID: 1111 <br>
-  Garage Adress: House 33,Road5,Bashundhara RA <br>
-  Capacity:5     </p></b></b>
+       <p><b>Garage Adress: {{ post.loc_name }} <br>
+  Car Slot : {{ post.car_slot }} <br>
+  Bike Slot : {{ post.bike_slot }} </p></b></b>
 
      <p align="center">   <input type="submit" value="Continue">     </p>
 
 </div>
+{% endfor %}
 
 
-<div class="fourth">
-
-       <p><b>Garage ID: 2601 <br>
-  Garage Adress: House 33,Road5,Bashundhara RA <br>
-  Capacity:6     </p></b></b>
-
-     <p align="center">   <input type="submit" value="Continue">     </p>
-</div>
-
-
-<div class="fourth">
-
-       <p><b>Garage ID: 2609 <br>
-  Garage Adress: House 34,Road15,Bashundhara RA <br>
-  Capacity:7     </p></b></b>
-
-     <p align="center">   <input type="submit" value="Continue">     </p>
-
-</div>
-
-<div class="fourth">
-
-       <p><b> <br>Garage ID: 2221 <br>
-  Garage Adress: House 3,Road 6,Bashundhara RA
-           </br>
-  Capacity:10     </p></b></b> </b>
-    <p align="center">   <input type="submit" value="Continue">  </b>   </p>
-
-</div>
-
-
+{% endif %}
 </body>
 
 </html>
