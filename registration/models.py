@@ -9,7 +9,7 @@ class Users(models.Model):
     name = models.CharField(max_length=200)
     email = models.EmailField(max_length=255)
     password = models.CharField(max_length=255)
-    phone_number = models.IntegerField(max_length=11, null=True, blank=True)
+    phone_number = models.IntegerField(null=True, blank=True)
     gender = models.CharField(max_length=255, null=True, blank=True)
     age = models.IntegerField(null=True, blank=True)
     image = models.ImageField(upload_to='static/images', null=True, blank=True)

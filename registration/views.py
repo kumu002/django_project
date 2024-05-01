@@ -50,7 +50,7 @@ def login(request):
     return render(request, 'login.html')
 
 def home2(request):
-
+    return render(request, 'home2.html')
 # logout page
 def user_logout(request):
     logout(request)
