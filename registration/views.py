@@ -53,6 +53,7 @@ def login(request):
 
     return render(request, 'login.html')
 
+def home2(request):
 
 def mainpage(request):
     return render(request, 'mainpage.html')
