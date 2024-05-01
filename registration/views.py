@@ -1,3 +1,6 @@
+from hashlib import md5
+
+from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
@@ -22,6 +25,7 @@ def signup(request):
         if password != confirmation:
             return render(request, HttpResponse('Passwords do not match'))
         else:
+
             user = Users.objects.create(name=name, role_id=userrole, email=email, password=password)
             user.save()
 
@@ -48,6 +52,10 @@ def login(request):
             return redirect('login')
 
     return render(request, 'login.html')
+
+
+def mainpage(request):
+    return render(request, 'mainpage.html')
 
 
 # logout page
