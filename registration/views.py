@@ -36,6 +36,7 @@ def user_login(request):
         form = LoginForm()
     return render(request, 'login.html', {'form': form})
 
+def home2(request):
 
 # logout page
 def user_logout(request):
