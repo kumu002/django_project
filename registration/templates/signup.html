@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GarageKoi Registration Form</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="static/registrationstyle.css">
+</head>
+<body>
+       <img src="{% static 'image/3254.jpg' %}" style="width:100%">
+    <div class="registration-form">
+        <h1>GarageKoi</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <p>Full Name : </p>
+            <input type="text" class="formcontrol" name="fullname" id="fullname" placeholder="Full Name">
+            <p>User Name : </p>
+            <input type="text" id="username" name="username" class="formcontrol"  placeholder="User Name">
+            <p>Password : </p>
+            <input type="password" id="password" class="formcontrol" name="password" placeholder="password">
+            <p>Email :</p>
+            <input type="email" id="email" class="formcontrol" name="email" placeholder="Email">
+            <button type="submit" class="btn btn-primary">Registration</button>
+        </form>
+    </div>
+
+</body>
+</html>
