@@ -3,7 +3,11 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.12 (GaragekoiProject)" />
   </component>
+<<<<<<< HEAD
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12" project-jdk-type="Python SDK" />
+=======
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (GaragekoiProject)" project-jdk-type="Python SDK" />
+>>>>>>> eca3f21b428ed0d361c6ada88132aa4462c24642
   <component name="PyCharmProfessionalAdvertiser">
     <option name="shown" value="true" />
   </component>

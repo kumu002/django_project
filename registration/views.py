@@ -1,6 +1,8 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import SignupForm, LoginForm
+from .models import Users
 
 
 # Create your views here.
@@ -9,32 +11,43 @@ def index(request):
     return render(request, 'index.html')
 
 
-# signup page
-def user_signup(request):
+def signup(request):
     if request.method == 'POST':
-        form = SignupForm(request.POST)
-        if form.is_valid():
-            form.save()
+        name = request.POST["name"]
+        email = request.POST["email"]
+        userrole = request.POST["roles"]
+        password = request.POST["password"]
+        confirmation = request.POST["conformpassword"]
+        print(userrole)
+        if password != confirmation:
+            return render(request, HttpResponse('Passwords do not match'))
+        else:
+            user = Users.objects.create(name=name, role_id=userrole, email=email, password=password)
+            user.save()
+
             return redirect('login')
-    else:
-        form = SignupForm()
-    return render(request, 'signup.html', {'form': form})
+
+    return render(request, 'signup.html')
 
 
-# login page
-def user_login(request):
+def login(request):
     if request.method == 'POST':
-        form = LoginForm(request.POST)
-        if form.is_valid():
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password']
-            user = authenticate(request, username=username, password=password)
-            if user:
-                login(request, user)
-                return redirect('home')
-    else:
-        form = LoginForm()
-    return render(request, 'login.html', {'form': form})
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = Users.objects.get(email=username)
+        # user = authenticate(request, username=username, password=password)
+
+        if password == user.password:
+            request.session["user_id"] = user.id
+            return HttpResponse("You're logged in.")
+            # return redirect('/')
+        # user = authenticate(username=username, password=password)
+
+        else:
+            # messages(request, "invalid username or password")
+            return redirect('login')
+
+    return render(request, 'login.html')
 
 def home2(request):
 

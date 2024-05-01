@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="48aa3ca4-238d-4e38-91bb-b8514840d5f1" name="Changes" comment="212010 commit2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/registration/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/registration/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home2.html" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/registration/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/registration/models.py" afterDir="false" />
+=======
+>>>>>>> eca3f21b428ed0d361c6ada88132aa4462c24642
+>>>>>>> 129398c624416b0f181bb72c7f6788cacee7920e
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +32,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+=======
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="GaragekoiProject/invalid/Django" />
+    </ignored-facets>
+>>>>>>> 129398c624416b0f181bb72c7f6788cacee7920e
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -42,12 +56,20 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+<<<<<<< HEAD
+    &quot;Python.settings.executor&quot;: &quot;Run&quot;,
+=======
+>>>>>>> eca3f21b428ed0d361c6ada88132aa4462c24642
     &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;django.template.preview.state&quot;: &quot;SHOW_EDITOR_AND_PREVIEW&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+<<<<<<< HEAD
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/janna/pycherm_project/django_project&quot;,
+=======
     &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/django_project&quot;,
+>>>>>>> eca3f21b428ed0d361c6ada88132aa4462c24642
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -58,11 +80,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\janna\pycherm_project\django_project\registration" />
       <recent name="C:\Users\janna\pycherm_project\django_project\registration\static\image" />
       <recent name="C:\Users\User\PycharmProjects\GaragekoiProject\registration" />
       <recent name="C:\Users\User\PycharmProjects\GaragekoiProject\static\image" />
       <recent name="C:\Users\User\PycharmProjects\GaragekoiProject\static" />
-      <recent name="C:\Users\User\PycharmProjects\GaragekoiProject" />
     </key>
   </component>
   <component name="RunManager">
