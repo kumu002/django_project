@@ -13,15 +13,8 @@
         <h1>GarageKoi</h1>
         <form action="" method="post">
             {% csrf_token %}
-            <p>Full Name : </p>
-            <input type="text" class="formcontrol" name="fullname" id="fullname" placeholder="Full Name">
-            <p>User Name : </p>
-            <input type="text" id="username" name="username" class="formcontrol"  placeholder="User Name">
-            <p>Password : </p>
-            <input type="password" id="password" class="formcontrol" name="password" placeholder="password">
-            <p>Email :</p>
-            <input type="email" id="email" class="formcontrol" name="email" placeholder="Email">
-            <button type="submit" class="btn btn-primary">Registration</button>
+            {{ form.as_p }}
+            <button type="submit">ok</button>
         </form>
     </div>
 

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatiable" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,29 +15,9 @@
     <form action="" method="post">
         <h1>GarageKoi</h1>
         {%csrf_token%}
-        <div class="input-box">
-            <input type="text" placeholder="Username" name="uname"
-        required>
-        <box-icon type='solid' name='user'></box-icon>
-        </div>
-        <div class="input-box">
-            <input type="password" name="pass1" placeholder="Password"
-        required>
-        <box-icon name='lock'></box-icon>
-        </div>
-        <div class="remeber-forget">
-        <label><input type="checkbox"> Remember me</label>
-        <a href="#">Forgot Password ?</a>
-    </div>
-    <button type="submit" class="btn">Login</button>
-
-    <div class="register-link" >
-        <p>Don't have an account ?<a
-            href="/static/signup.html">Register</a></p>
-    </div>
-
-     </form>
-</div>
+    {{ form.as_p }}
+        <button> sumbit</button>
+    </form></div>
 
 </body>
 </html>
