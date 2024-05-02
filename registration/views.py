@@ -1,8 +1,11 @@
+from hashlib import md5
+
+from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import SignupForm, LoginForm
-from .models import Users
+from .models import Users, Parking_places
 
 
 # Create your views here.
@@ -22,6 +25,7 @@ def signup(request):
         if password != confirmation:
             return render(request, HttpResponse('Passwords do not match'))
         else:
+
             user = Users.objects.create(name=name, role_id=userrole, email=email, password=password)
             user.save()
 
@@ -39,7 +43,10 @@ def login(request):
 
         if password == user.password:
             request.session["user_id"] = user.id
-            return HttpResponse("You're logged in.")
+            request.session["email"] = user.email
+            request.session["name"] = user.name
+            request.session["role_id"] = user.role_id
+            return redirect('home2')
             # return redirect('/')
         # user = authenticate(username=username, password=password)
 
@@ -49,9 +56,17 @@ def login(request):
 
     return render(request, 'login.html')
 
+
 def home2(request):
+<<<<<<< HEAD
     return render(request, 'home2.html')
+=======
+    all_posts = Parking_places.objects.raw("Select * from registration_parking_places, registration_location where role_id=2")
+    return render(request, "home2.html", {'all_posts': all_posts})
+
+
+>>>>>>> origin/main
 # logout page
-def user_logout(request):
-    logout(request)
+def logout(request):
+    del request.session
     return redirect('login')
