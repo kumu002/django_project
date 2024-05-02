@@ -22,9 +22,12 @@
       </ul>
         <ul class="navbar-nav">
 
+            <li><a class="login nav-link" href="#" >Genaral User Profile</a></li>
+            <li><a class="login nav-link" href="#" >Garage Owner Profile</a></li>
             <li><a class="login nav-link" href="#" >Add Slot</a></li>
             <li> <a class="login nav-link" >{{request.session.name}}</a> </li>
             <li><a class="login nav-link" href="{% url 'login' %}" >log out</a></li>
+
 
 
 
@@ -99,7 +102,7 @@ div {
   Car Slot : {{ post.car_slot }} <br>
   Bike Slot : {{ post.bike_slot }}</p></b></b>
 
-     <p align="center">   <input type="submit" value="Continue">     </p>
+     <p align="center">   <input type="submit" value="Book Now">     </p>
 
 </div>
 {% endfor %}
