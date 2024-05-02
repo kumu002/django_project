@@ -30,7 +30,8 @@
             <li><a class="login nav-link" href="{% url 'addslot'%}" >Add Slot</a></li>
             <li><a class="login nav-link" href="{% url 'aboutus'%}" >About Us</a></li>
             <li><a class="login nav-link" href="{% url 'subscription'%}" >Subscription</a></li>
-            <li> <a class="login nav-link" >{{request.session.name}}</a> </li>
+            <li><a class="login nav-link" href="{% url 'payment'%}" >Payment</a></li>
+            <li><a class="login nav-link" >{{request.session.name}}</a></li>
             <li><a class="login nav-link" href="{% url 'login' %}" >log out</a></li>
 
 

@@ -17,7 +17,7 @@ urlpatterns = [
     path('addslot/', views.addslot, name='addslot'),
     path('aboutus/', views.aboutus, name='aboutus'),
     path('subscripton/', views.subscription, name='subscription'),
-
+    path('payment/', views.payment, name='payment'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -71,6 +71,9 @@ def aboutus(request):
     return render(request, 'aboutus.html')
 def subscription(request):
     return render(request, 'subscription.html')
+
+def payment(request):
+    return render(request, 'payment.html')
 # logout page
 def logout(request):
     del request.session
