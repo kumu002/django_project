@@ -1,4 +1,3 @@
-
 from django.conf import settings
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns, static
@@ -11,13 +10,13 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('login/', views.login, name='login'),
     path('signup/', views.signup, name='signup'),
-<<<<<<< HEAD
-    path('home/', views.home2, name='home2'),
-    path('logout/', views.user_logout, name='logout'),
-=======
     path('home2/', views.home2, name='home2'),
     path('logout/', views.logout, name='logout'),
->>>>>>> origin/main
+    path('garageownerprofile/', views.garageownerprofile,name='garageownerprofile'),
+    path('userprofile/', views.userprofile, name='userprofile'),
+    path('addslot/', views.addslot, name='addslot'),
+    path('aboutus/', views.aboutus, name='aboutus'),
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()

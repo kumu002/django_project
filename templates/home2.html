@@ -15,17 +15,9 @@
   <div class="container-fluid">
       <a class="navbar-brand" href="#" style="font-size:xx-large"><i>Garage Koi</i></a>
 
-<<<<<<< HEAD
-  <img src="picture.png" alt="error loading" width="300" height="300">
 
 
-<div class="topnav">
-  <a class="active" href="#home">GarageKoi?</a>
-  <a href="#profile"> Profile  </a>
-  <a href="#contact">Contact us </a>
-  <a href="#about">About</a>
-</div>
-=======
+
     <div class="collapse navbar-collapse" id="">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
@@ -33,9 +25,10 @@
       </ul>
         <ul class="navbar-nav">
 
-            <li><a class="login nav-link" href="#" >Genaral User Profile</a></li>
-            <li><a class="login nav-link" href="#" >Garage Owner Profile</a></li>
-            <li><a class="login nav-link" href="#" >Add Slot</a></li>
+            <li><a class="login nav-link" href="{% url 'userprofile'%}" >General User Profile</a></li>
+            <li><a class="login nav-link" href="{% url 'garageownerprofile'%}" >Garage Owner Profile</a></li>
+            <li><a class="login nav-link" href="{% url 'addslot'%}" >Add Slot</a></li>
+            <li><a class="login nav-link" href="{% url 'aboutus'%}" >About Us</a></li>
             <li> <a class="login nav-link" >{{request.session.name}}</a> </li>
             <li><a class="login nav-link" href="{% url 'login' %}" >log out</a></li>
 
@@ -50,21 +43,9 @@
 
   </div>
 </nav>
->>>>>>> origin/main
-
-<div style="padding-left:16px">
 
 
-</div>
-
-
-  <br>  <br>
- <br> <br>  <br>
- <br><br>  <br>
- <br>
-<!-- <p>  <body  style="background-color:Gray;" >-->
-
-</body> </p>
+</body>
 
 <style>
 div {
@@ -99,7 +80,7 @@ div {
 
 
 </style>
-</head>
+
 <body>
 
 <h3 align = "center" >Garage Details </h3>
@@ -110,16 +91,14 @@ div {
 {%  for post in all_posts %}
 <div class="fourth">
 
-       <p><b>Garage Adress: {{ post.loc_name }} <br>
-  Car Slot : {{ post.car_slot }} <br>
-  Bike Slot : {{ post.bike_slot }}</p></b></b>
-
-     <p align="center">   <input type="submit" value="Book Now">     </p>
+       <p><b>Garage Address: {{ post.loc_name }} <br>
+           Car Slot : {{ post.car_slot }} <br>
+           Bike Slot : {{ post.bike_slot }}
+       </b></p>
+    <p align="center"><input type="submit" value="Book Now"></p>
 
 </div>
 {% endfor %}
-
-
 {% endif %}
 </body>
 

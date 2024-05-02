@@ -1,10 +1,7 @@
-from hashlib import md5
 
-from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login, logout
-from .forms import SignupForm, LoginForm
+
 from .models import Users, Parking_places
 
 
@@ -58,14 +55,20 @@ def login(request):
 
 
 def home2(request):
-<<<<<<< HEAD
+
     return render(request, 'home2.html')
-=======
     all_posts = Parking_places.objects.raw("Select * from registration_parking_places, registration_location where role_id=2")
     return render(request, "home2.html", {'all_posts': all_posts})
 
 
->>>>>>> origin/main
+def garageownerprofile(request):
+    return render(request, 'GarageOwnerProfile.html')
+def userprofile(request):
+    return render(request, 'UserProfile.html')
+def addslot(request):
+    return render(request, 'AddSlot.html')
+def aboutus(request):
+    return render(request, 'aboutus.html')
 # logout page
 def logout(request):
     del request.session
