@@ -16,6 +16,7 @@ urlpatterns = [
     path('userprofile/', views.userprofile, name='userprofile'),
     path('addslot/', views.addslot, name='addslot'),
     path('aboutus/', views.aboutus, name='aboutus'),
+    path('subscripton/', views.subscription, name='subscription'),
 
 ]
 

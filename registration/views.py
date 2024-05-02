@@ -69,6 +69,8 @@ def addslot(request):
     return render(request, 'AddSlot.html')
 def aboutus(request):
     return render(request, 'aboutus.html')
+def subscription(request):
+    return render(request, 'subscription.html')
 # logout page
 def logout(request):
     del request.session
