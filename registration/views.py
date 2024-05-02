@@ -58,10 +58,14 @@ def login(request):
 
 
 def home2(request):
+<<<<<<< HEAD
+    return render(request, 'home2.html')
+=======
     all_posts = Parking_places.objects.raw("Select * from registration_parking_places, registration_location where role_id=2")
     return render(request, "home2.html", {'all_posts': all_posts})
 
 
+>>>>>>> origin/main
 # logout page
 def logout(request):
     del request.session
